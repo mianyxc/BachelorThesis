@@ -1,0 +1,95 @@
+\begin{thebibliography}{10}
+
+\bibitem{fetter_decision_1961}
+Fetter R~B, Dalleck W~C.
+\newblock Decision models for inventory management.
+\newblock {RD} Irwin, 1961
+\thudot
+
+\bibitem{lambrecht_protective_1984}
+Lambrecht M~R, Muckstadt J~A, Luyten R.
+\newblock Protective stocks in multi-stage production systems.
+\newblock {THE} {INTERNATIONAL} {JOURNAL} {OF} {PRODUCTION} {RESEARCH}, 1984,
+  22(6):1001–1025
+\thudot
+
+\bibitem{clark_approximate_1962}
+Clark A~J, Scarf H.
+\newblock Approximate solutions to a simple multi-echelon inventory problem.
+\newblock Studies in Applied Probability and Management Science, 1962. 88–110
+\thudot
+
+\bibitem{baker_effect_1986}
+Baker K~R, Magazine M~J, Nuttle H~L.
+\newblock The effect of commonality on safety stock in a simple inventory
+  model.
+\newblock Management Science, 1986, 32(8):982–988
+\thudot
+
+\bibitem{eppen_determining_1988}
+Eppen G~D, Martin R~K.
+\newblock Determining safety stock in the presence of stochastic lead time and
+  demand.
+\newblock Management Science, 1988, 34(11):1380–1390
+\thudot
+
+\bibitem{molinder_joint_1997}
+Molinder A.
+\newblock Joint optimization of lot-sizes, safety stocks and safety lead times
+  in an {MRP} system.
+\newblock International Journal of Production Research, 1997, 35(4):983--994
+\thudot
+
+\bibitem{chopra_effect_2004}
+Chopra S, Reinhardt G, Dada M.
+\newblock The Effect of Lead Time Uncertainty on Safety Stocks.
+\newblock Decision Sciences, 2004, 35(1):1–24
+\thudot
+
+\bibitem{fang_decision_2013}
+Fang X, Zhang C, Robb D~J, et~al.
+\newblock Decision support for lead time and demand variability reduction.
+\newblock Omega, 2013, 41(2):390–396
+\thudot
+
+\bibitem{gershwin_manufacturing_1994}
+Gershwin S~B.
+\newblock Manufacturing systems engineering.
+\newblock {PTR} Prentice Hall (Englewood Cliffs, {NJ)}, 1994
+\thudot
+
+\bibitem{little_proof_1961}
+Little J~D.
+\newblock A Proof for the Queuing Formula: L= λ W.
+\newblock Operations research, 1961, 9(3):383–387
+\thudot
+
+\bibitem{goyal_economic_1978}
+Goyal S~K.
+\newblock Economic batch quantity in a multi-stage production system.
+\newblock {THE} {INTERNATIONAL} {JOURNAL} {OF} {PRODUCTION} {RESEARCH}, 1978,
+  16(4):267–273
+\thudot
+
+\bibitem{kimura_design_1981}
+Kimura O, Terada H.
+\newblock Desiǵn and analysis of Pull System, a method of multi-staǵe
+  production control.
+\newblock The International Journal Of Production Research, 1981,
+  19(3):241–253
+\thudot
+
+\bibitem{tabe_analysis_1980}
+Tabe T, Muramatsu R, Tanaka Y.
+\newblock Analysis of production ordering quantities and inventory variations
+  in a multi-stage production ordering system.
+\newblock International Journal of Production Research, 1980, 18(2):245
+\thudot
+
+\bibitem{conway_role_1988}
+Conway R, Maxwell W, {McClain} J~O, et~al.
+\newblock The role of work-in-process inventory in serial production lines.
+\newblock Operations Research, 1988, 36(2):229–241
+\thudot
+
+\end{thebibliography}
