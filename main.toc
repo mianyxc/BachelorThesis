@@ -24,22 +24,24 @@
 \contentsline {subsection}{\numberline {4.3.2}泊松分布的正态近似}{21}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}正态近似的适用性}{23}{subsection.4.3.3}
 \contentsline {chapter}{\numberline {第\nobreakspace {}5\nobreakspace {}章}改进失效的风险}{26}{chapter.5}
-\contentsline {section}{\numberline {5.1}右偏斜的需求分布一定存在改进失效的可能}{26}{section.5.1}
-\contentsline {section}{\numberline {5.2}任何服务水平都存在改进失效的可能}{28}{section.5.2}
-\contentsline {chapter}{\numberline {第\nobreakspace {}6\nobreakspace {}章}需求相关性对改进效果的影响}{29}{chapter.6}
-\contentsline {section}{\numberline {6.1}需求相关性的现实意义}{29}{section.6.1}
-\contentsline {section}{\numberline {6.2}需求服从二维正态分布的情况}{29}{section.6.2}
-\contentsline {section}{\numberline {6.3}需求服从多维正态分布的情况}{32}{section.6.3}
-\contentsline {section}{\numberline {6.4}极端情况的讨论}{33}{section.6.4}
-\contentsline {chapter}{\numberline {第\nobreakspace {}7\nobreakspace {}章}Backorder对改进效果的影响}{35}{chapter.7}
-\contentsline {section}{\numberline {7.1}考虑Backorder成本的任意更新过程}{35}{section.7.1}
-\contentsline {section}{\numberline {7.2}考虑Backorder成本的泊松过程}{36}{section.7.2}
-\contentsline {section}{\numberline {7.3}服务水平约束的影响}{38}{section.7.3}
-\contentsline {chapter}{\numberline {第\nobreakspace {}8\nobreakspace {}章}提前期对改进效果的影响}{39}{chapter.8}
-\contentsline {section}{\numberline {8.1}需求正态分布的情况}{39}{section.8.1}
-\contentsline {section}{\numberline {8.2}需求泊松到达的情况}{39}{section.8.2}
-\contentsline {section}{\numberline {8.3}(s,S)库存策略下的情况}{39}{section.8.3}
-\contentsline {chapter}{插图索引}{40}{section*.23}
-\contentsline {chapter}{表格索引}{41}{section*.25}
-\contentsline {chapter}{公式索引}{42}{section*.27}
-\contentsline {chapter}{参考文献}{45}{section*.29}
+\contentsline {section}{\numberline {5.1}对称稳定分布的参数与改进失效的关系}{26}{section.5.1}
+\contentsline {section}{\numberline {5.2}右偏斜的需求分布一定存在改进失效的可能}{28}{section.5.2}
+\contentsline {section}{\numberline {5.3}任何服务水平都存在改进失效的可能}{30}{section.5.3}
+\contentsline {section}{\numberline {5.4}第二类服务水平下不会发生改进失效}{30}{section.5.4}
+\contentsline {chapter}{\numberline {第\nobreakspace {}6\nobreakspace {}章}需求相关性对改进效果的影响}{31}{chapter.6}
+\contentsline {section}{\numberline {6.1}需求相关性的现实意义}{31}{section.6.1}
+\contentsline {section}{\numberline {6.2}需求服从二维正态分布的情况}{31}{section.6.2}
+\contentsline {section}{\numberline {6.3}需求服从多维正态分布的情况}{34}{section.6.3}
+\contentsline {section}{\numberline {6.4}极端情况的讨论}{35}{section.6.4}
+\contentsline {chapter}{\numberline {第\nobreakspace {}7\nobreakspace {}章}Backorder对改进效果的影响}{37}{chapter.7}
+\contentsline {section}{\numberline {7.1}考虑Backorder成本的任意更新过程}{37}{section.7.1}
+\contentsline {section}{\numberline {7.2}考虑Backorder成本的泊松过程}{38}{section.7.2}
+\contentsline {section}{\numberline {7.3}服务水平约束的影响}{40}{section.7.3}
+\contentsline {chapter}{\numberline {第\nobreakspace {}8\nobreakspace {}章}提前期对改进效果的影响}{41}{chapter.8}
+\contentsline {section}{\numberline {8.1}需求正态分布的情况}{41}{section.8.1}
+\contentsline {section}{\numberline {8.2}需求泊松到达的情况}{41}{section.8.2}
+\contentsline {section}{\numberline {8.3}(s,S)库存策略下的情况}{41}{section.8.3}
+\contentsline {chapter}{插图索引}{42}{section*.24}
+\contentsline {chapter}{表格索引}{43}{section*.26}
+\contentsline {chapter}{公式索引}{44}{section*.28}
+\contentsline {chapter}{参考文献}{47}{section*.30}

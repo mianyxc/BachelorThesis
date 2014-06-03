@@ -1,6 +1,7 @@
 %本章证明优化潜力的存在性
 
 \chapter{优化潜力存在性}
+\label{chapter:优化潜力}
 
 在本章中，我们将忽略相关性和提前期等一切影响因素，单纯从需求的概率分布变化来探究在制品库存前置策略对安全库存的优化作用。
 
@@ -108,17 +109,17 @@ P(D\leq K) = \frac{2p-h}{2p+h}
 
 \subsection{两种成品需求独立正态分布}
 
-仍然以汽车保险杠生产为例，假设某种汽车保险杠只有两种颜色，且两种颜色的需求服从独立的正态分布。第一种颜色的保险杠，需求$D_1$服从正态分布$N_1(\mu_1,\sigma_1^2)$；第二种颜色的保险杠，需求$D_2$服从正态分布$N_2(\mu_2,\sigma_2^2)$。企业设定的服务水平为$\eta=1-\alpha$。设$z_\alpha$是标准正态分布的$1-\alpha$分位数，即$z_\alpha$满足
+仍然以汽车保险杠生产为例，假设某种汽车保险杠只有两种颜色，且两种颜色的需求服从独立的正态分布。第一种颜色的保险杠，需求$D_1$服从正态分布$N_1(\mu_1,\sigma_1^2)$；第二种颜色的保险杠，需求$D_2$服从正态分布$N_2(\mu_2,\sigma_2^2)$。企业设定的服务水平为$\eta$。设$z_\eta$是标准正态分布的$\eta$分位数，即$z_\eta$满足
 \[
-\int_{-\infty}^{z_\alpha}\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}\dif x = 1-\alpha
+\int_{-\infty}^{z_\eta}\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}\dif x = \eta
 \]
 则此服务水平下，两种成品的库存分别为
 \begin{align}
-\xi_1 &= \mu_1 + z_\alpha\sigma_1 \label{eq:成品库存1}\\
-\xi_2 &= \mu_2 + z_\alpha\sigma_2 \label{eq:成品库存2}
+\xi_1 &= \mu_1 + z_\eta\sigma_1 \label{eq:成品库存1}\\
+\xi_2 &= \mu_2 + z_\eta\sigma_2 \label{eq:成品库存2}
 \end{align}
 
-现在假设我们按照改进策略，取消两种颜色的成品库存，改为保留未喷涂的在制品库存。忽略供货提前期等变化的影响。企业的服务水平仍然为$\eta=1-\alpha$。为了满足该服务水平，所需的在制品库存为$\xi$。此时的在制品库存需要同时应对两种颜色的成品需求，因此，对未喷涂的在制品需求为$D=D_1+D_2$。
+现在假设我们按照改进策略，取消两种颜色的成品库存，改为保留未喷涂的在制品库存。忽略供货提前期等变化的影响。企业的服务水平仍然为$\eta$。为了满足该服务水平，所需的在制品库存为$\xi$。此时的在制品库存需要同时应对两种颜色的成品需求，因此，对未喷涂的在制品需求为$D=D_1+D_2$。
 
 设$D_1$、$D_2$的联合分布为$f(x_1,x_2)$。因为$D_1$、$D_2$是独立的，所以$f(x_1,x_2)$的概率分布为
 \begin{align}
@@ -183,18 +184,18 @@ h(y_1) = \frac{1}{\sqrt{2\pi(\sigma_1^2+\sigma_2^2)}}e^{-\frac{[y_1-(\mu_1+\mu_2
 \label{eq:边缘分布结果}
 \end{equation}
 
-由公式\ref{eq:边缘分布结果}可知，在制品的需求$D$服从正态分布$N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$。为了满足服务水平$1-\alpha$，所需的在制品库存为
+由公式\ref{eq:边缘分布结果}可知，在制品的需求$D$服从正态分布$N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$。为了满足服务水平$\eta$，所需的在制品库存为
 \begin{equation}
-\xi = \mu_1 + \mu_2 + z_\alpha\sqrt{\sigma_1^2+\sigma_2^2}
+\xi = \mu_1 + \mu_2 + z_\eta\sqrt{\sigma_1^2+\sigma_2^2}
 \label{eq:在制品库存}
 \end{equation}
 
 至此，我们可以利用公式\ref{eq:成品库存1}、\ref{eq:成品库存2}和\ref{eq:在制品库存}将改进前后的库存总量进行比较
 \begin{align}
-\xi_1 + \xi_2 - \xi &= \mu_1 + z_\alpha\sigma_1 + \mu_2 + z_\alpha\sigma_2 - \left(\mu_1 + \mu_2 + z_\alpha\sqrt{\sigma_1^2+\sigma_2^2}\right) \notag\\
-&= z_\alpha\left(\sigma_1+\sigma_2-\sqrt{\sigma_1^2+\sigma_2^2}\right) \notag\\
-&> z_\alpha\left(\sigma_1+\sigma_2-\sqrt{\sigma_1^2+\sigma_2^2+2\sigma_1\sigma_2}\right) \notag\\
-&= z_\alpha\left(\sigma_1+\sigma_2-\sqrt{(\sigma_1+\sigma_2)^2}\right) \notag\\
+\xi_1 + \xi_2 - \xi &= \mu_1 + z_\eta\sigma_1 + \mu_2 + z_\eta\sigma_2 - \left(\mu_1 + \mu_2 + z_\eta\sqrt{\sigma_1^2+\sigma_2^2}\right) \notag\\
+&= z_\eta\left(\sigma_1+\sigma_2-\sqrt{\sigma_1^2+\sigma_2^2}\right) \notag\\
+&> z_\eta\left(\sigma_1+\sigma_2-\sqrt{\sigma_1^2+\sigma_2^2+2\sigma_1\sigma_2}\right) \notag\\
+&= z_\eta\left(\sigma_1+\sigma_2-\sqrt{(\sigma_1+\sigma_2)^2}\right) \notag\\
 &= 0
 \label{eq:改进前后库存比较}
 \end{align}
@@ -204,26 +205,26 @@ h(y_1) = \frac{1}{\sqrt{2\pi(\sigma_1^2+\sigma_2^2)}}e^{-\frac{[y_1-(\mu_1+\mu_2
 
 \subsection{两种以上的成品需求独立正态分布}
 
-现在我们将上述结果进行推广。假设某种汽车保险杠有$N$种颜色（$N\geq 2$），并且服从两两相互独立的正态分布。第$i$种颜色的保险杠，需求$D_i$服从正态分布$N_i(\mu_i,\sigma_i^2)$，$i=1,2,\ldots,N$。企业的服务水平仍为$\eta=1-\alpha$，其对应的标准正态分布$1-\alpha$分位数仍为$z_\alpha$。
+现在我们将上述结果进行推广。假设某种汽车保险杠有$N$种颜色（$N\geq 2$），并且服从两两相互独立的正态分布。第$i$种颜色的保险杠，需求$D_i$服从正态分布$N_i(\mu_i,\sigma_i^2)$，$i=1,2,\ldots,N$。企业的服务水平仍为$\eta$，其对应的标准正态分布$\eta$分位数仍为$z_\eta$。
 
 为了满足此服务水平，各成品需要保留的库存为
 \begin{equation}
-\xi_i = \mu_i + z_\alpha\sigma_i,\qquad i=1,2,\ldots,N
+\xi_i = \mu_i + z_\eta\sigma_i,\qquad i=1,2,\ldots,N
 \label{eq:成品库存i}
 \end{equation}
 
-现在假设我们按照改进策略，取消所有颜色的成品库存，改为保留未喷涂的在制品库存。为了满足服务水平$1-\alpha$，所需的在制品库存为$\xi$。此时在制品库存的需求为$D=\sum_{i=1}^ND_i$。前面已证任意两个独立的正态分布之和仍然服从正态分布，由于所有的$D_i$都是相互独立的，因此它们可以连续加和，其结果仍然服从正态分布。所以我们有$D\sim N(\sum_{i=1}^N\mu_i,\sum_{i=1}^N\sigma_i^2)$。进而可以得到在制品库存为
+现在假设我们按照改进策略，取消所有颜色的成品库存，改为保留未喷涂的在制品库存。为了满足服务水平$\eta$，所需的在制品库存为$\xi$。此时在制品库存的需求为$D=\sum_{i=1}^ND_i$。前面已证任意两个独立的正态分布之和仍然服从正态分布，由于所有的$D_i$都是相互独立的，因此它们可以连续加和，其结果仍然服从正态分布。所以我们有$D\sim N(\sum_{i=1}^N\mu_i,\sum_{i=1}^N\sigma_i^2)$。进而可以得到在制品库存为
 \begin{equation}
-\xi = \sum_{i=1}^N\mu_i + z_\alpha\sqrt{\sum_{i=1}^N\sigma_i^2}
+\xi = \sum_{i=1}^N\mu_i + z_\eta\sqrt{\sum_{i=1}^N\sigma_i^2}
 \label{eq:在制品库存i}
 \end{equation}
 
 通过公式\ref{eq:成品库存i}和\ref{eq:在制品库存i}比较改进前后的库存变化
 \begin{align}
-\sum_{i=1}^N\xi_i - \xi &= \sum_{i=1}^N (\mu_i+z_\alpha\sigma_i) - \left(\sum_{i=1}^N\mu_i + z_\alpha\sqrt{\sum_{i=1}^N\sigma_i^2}\right) \notag\\
-&= z_\alpha\left(\sum_{i=1}^N\sigma_i-\sqrt{\sum_{i=1}^N\sigma_i^2}\right) \notag\\
-&> z_\alpha\left(\sum_{i=1}^N\sigma_i-\sqrt{\sum_{i=1}^N\sigma_i^2+2\sum_{i=1}^{N-1}\sum_{j=i+1}^N\sigma_i\sigma_j}\right) \notag\\
-&= z_\alpha\left(\sum_{i=1}^N\sigma_i-\sqrt{\left(\sum_{i=1}^N\sigma_i\right)^2}\right) \notag\\
+\sum_{i=1}^N\xi_i - \xi &= \sum_{i=1}^N (\mu_i+z_\eta\sigma_i) - \left(\sum_{i=1}^N\mu_i + z_\eta\sqrt{\sum_{i=1}^N\sigma_i^2}\right) \notag\\
+&= z_\eta\left(\sum_{i=1}^N\sigma_i-\sqrt{\sum_{i=1}^N\sigma_i^2}\right) \notag\\
+&> z_\eta\left(\sum_{i=1}^N\sigma_i-\sqrt{\sum_{i=1}^N\sigma_i^2+2\sum_{i=1}^{N-1}\sum_{j=i+1}^N\sigma_i\sigma_j}\right) \notag\\
+&= z_\eta\left(\sum_{i=1}^N\sigma_i-\sqrt{\left(\sum_{i=1}^N\sigma_i\right)^2}\right) \notag\\
 &= 0
 \label{eq:改进前后库存比较i}
 \end{align}
@@ -251,19 +252,19 @@ h(y_1) = \frac{1}{\sqrt{2\pi(\sigma_1^2+\sigma_2^2)}}e^{-\frac{[y_1-(\mu_1+\mu_2
 P(D=x) = \frac{e^{-\lambda}\lambda^x}{x!},\qquad x\in\mathbb{N}
 \]
 
-设企业的服务水平为$\eta=1-\alpha$，满足此服务水平所需的库存为$\xi$。则库存$\xi$的表达式为
+设企业的服务水平为$\eta=$，满足此服务水平所需的库存为$\xi$。则库存$\xi$的表达式为
 \begin{equation}
-\xi = \inf\left\{\xi\in\mathbb{N}\middle|\sum_{x=0}^{\xi}\frac{e^{-\lambda}\lambda^x}{x!}\geq 1-\alpha\right\}
+\xi = \inf\left\{\xi\in\mathbb{N}\middle|\sum_{x=0}^{\xi}\frac{e^{-\lambda}\lambda^x}{x!}\geq \eta\right\}
 \end{equation}
 其中符号$\inf$表示集合的下确界。
 
-设两种颜色的成品需求服从相互独立的泊松分布$Po(\lambda_1)$、$Po(\lambda_2)$。企业的服务水平为$\eta=1-\alpha$。则两种成品需要保持的库存$\xi_1$、$\xi_2$分别为
+设两种颜色的成品需求服从相互独立的泊松分布$Po(\lambda_1)$、$Po(\lambda_2)$。企业的服务水平为$\eta$。则两种成品需要保持的库存$\xi_1$、$\xi_2$分别为
 \begin{align}
-\xi_1 &= \inf\left\{\xi_1\in\mathbb{N}\middle|\sum_{x=0}^{\xi_1}\frac{e^{-\lambda_1}\lambda_1^x}{k!}\geq 1-\alpha\right\} \label{eq:成品库存_泊松1}\\
-\xi_2 &= \inf\left\{\xi_2\in\mathbb{N}\middle|\sum_{x=0}^{\xi_2}\frac{e^{-\lambda_2}\lambda_2^x}{k!}\geq 1-\alpha\right\} \label{eq:成品库存_泊松2}
+\xi_1 &= \inf\left\{\xi_1\in\mathbb{N}\middle|\sum_{x=0}^{\xi_1}\frac{e^{-\lambda_1}\lambda_1^x}{k!}\geq \eta\right\} \label{eq:成品库存_泊松1}\\
+\xi_2 &= \inf\left\{\xi_2\in\mathbb{N}\middle|\sum_{x=0}^{\xi_2}\frac{e^{-\lambda_2}\lambda_2^x}{k!}\geq \eta\right\} \label{eq:成品库存_泊松2}
 \end{align}
 
-现在假设取消两种颜色的成品库存，改为保留共同的在制品库存。企业的服务水平仍然为$\eta=1-\alpha$。为了满足该服务水平，所需的在制品库存为$\xi$。此时的在制品库存需要同时应对两种颜色的成品需求，因此，对未喷涂的在制品需求为$D=D_1+D_2$。
+现在假设取消两种颜色的成品库存，改为保留共同的在制品库存。企业的服务水平仍然为$\eta$。为了满足该服务水平，所需的在制品库存为$\xi$。此时的在制品库存需要同时应对两种颜色的成品需求，因此，对未喷涂的在制品需求为$D=D_1+D_2$。
 
 设$D_1$、$D_2$的联合分布为$f(x_1,x_2)$。因为$D_1$、$D_2$是独立的，所以$f(x_1,x_2)$的概率分布为
 \begin{align}
@@ -307,7 +308,7 @@ h(y_1) = \frac{e^{-(\lambda_1+\lambda_2)}(\lambda_1+\lambda_2)^{y_1}}{y_1!}
 
 由公式\ref{eq:边缘分布结果_泊松}可知，在制品的总需求$D$服从泊松分布$Po(\lambda_1+\lambda_2)$。所以应保留的在制品库存为
 \begin{equation}
-\xi = \inf\left\{\xi\in\mathbb{N}\middle|\sum_{x=0}^{\xi}\frac{e^{-(\lambda_1+\lambda_2)}(\lambda_1+\lambda_2)^x}{x!}\geq 1-\alpha\right\}
+\xi = \inf\left\{\xi\in\mathbb{N}\middle|\sum_{x=0}^{\xi}\frac{e^{-(\lambda_1+\lambda_2)}(\lambda_1+\lambda_2)^x}{x!}\geq \eta\right\}
 \label{eq:在制品库存_泊松}
 \end{equation}
 
@@ -338,24 +339,24 @@ h(y_1) = \frac{e^{-(\lambda_1+\lambda_2)}(\lambda_1+\lambda_2)^{y_1}}{y_1!}
 \label{fig:泊松分布和正态分布的比较}
 \end{figure}
 
-图\ref{fig:泊松分布和正态分布的比较}显示，用正态分布来近似表示泊松分布的效果是比较好的。假设企业的服务水平为$\eta=1-\alpha$，对应的正态分布分位数为$z_\alpha$，$N$种颜色的成品需求$D_i$服从两两相互独立的泊松分布$Po(\lambda_i)$，需要的库存为$\xi_i$，$i=1,2,\ldots,N$。利用正态分布近似，我们可以计算各成品的库存$\xi_i$的近似值$\hat{\xi_i}$为
+图\ref{fig:泊松分布和正态分布的比较}显示，用正态分布来近似表示泊松分布的效果是比较好的。假设企业的服务水平为$\eta$，对应的正态分布分位数为$z_\eta$，$N$种颜色的成品需求$D_i$服从两两相互独立的泊松分布$Po(\lambda_i)$，需要的库存为$\xi_i$，$i=1,2,\ldots,N$。利用正态分布近似，我们可以计算各成品的库存$\xi_i$的近似值$\hat{\xi_i}$为
 \begin{equation}
-\hat{\xi_i} = \lambda_i + z_\alpha\sqrt{\lambda_i},\qquad i=1,2,\ldots,N
+\hat{\xi_i} = \lambda_i + z_\eta\sqrt{\lambda_i},\qquad i=1,2,\ldots,N
 \label{eq:正态近似下的成品库存}
 \end{equation}
 
 前面已经证明，两两相互独立的泊松分布之和仍然是泊松分布。若我们取消成品库存，保留在制品库存，则在制品库存的总需求服从泊松分布$Po(\sum_{i=1}^N\lambda_i)$，可近似为正态分布$N(\sum_{i=1}^N\lambda_i,\sum_{i=1}^N\lambda_i)$。需要的在制品库存$\xi$的近似值$\hat{\xi}$为
 \begin{equation}
-\hat{\xi} = \sum_{i=1}^N\lambda_i + z_\alpha\sqrt{\sum_{i=1}^N\lambda_i}
+\hat{\xi} = \sum_{i=1}^N\lambda_i + z_\eta\sqrt{\sum_{i=1}^N\lambda_i}
 \label{eq:正态近似下的在制品库存}
 \end{equation}
 
 根据公式\ref{eq:正态近似下的成品库存}和\ref{eq:正态近似下的在制品库存}，可以比较改进前后的库存变化
 \begin{align}
-\sum_{i=1}^N\hat{\xi_i} - \hat{\xi} &= \sum_{i=1}^N\left(\lambda_i + z_\alpha\sqrt{\lambda_i}\right) - \left(\sum_{i=1}^N\lambda_i + z_\alpha\sqrt{\sum_{i=1}^N\lambda_i}\right) \notag\\
-&= z_\alpha\left(\sum_{i=1}^N\sqrt{\lambda_i}-\sqrt{\sum_{i=1}^N\lambda_i}\right) \notag\\
-&> z_\alpha\left(\sum_{i=1}^N\sqrt{\lambda_i}-\sqrt{\sum_{i=1}^N\lambda_i+2\sum_{i=1}^{N-1}\sum_{j=i+1}^N\sqrt{\lambda_i\lambda_j}}\right) \notag\\
-&= z_\alpha\left(\sum_{i=1}^N\sqrt{\lambda_i}-\sqrt{\left(\sum_{i=1}^N\sqrt{\lambda_i}\right)^2}\right) \notag\\
+\sum_{i=1}^N\hat{\xi_i} - \hat{\xi} &= \sum_{i=1}^N\left(\lambda_i + z_\eta\sqrt{\lambda_i}\right) - \left(\sum_{i=1}^N\lambda_i + z_\eta\sqrt{\sum_{i=1}^N\lambda_i}\right) \notag\\
+&= z_\eta\left(\sum_{i=1}^N\sqrt{\lambda_i}-\sqrt{\sum_{i=1}^N\lambda_i}\right) \notag\\
+&> z_\eta\left(\sum_{i=1}^N\sqrt{\lambda_i}-\sqrt{\sum_{i=1}^N\lambda_i+2\sum_{i=1}^{N-1}\sum_{j=i+1}^N\sqrt{\lambda_i\lambda_j}}\right) \notag\\
+&= z_\eta\left(\sum_{i=1}^N\sqrt{\lambda_i}-\sqrt{\left(\sum_{i=1}^N\sqrt{\lambda_i}\right)^2}\right) \notag\\
 &=0
 \label{eq:改进前后库存比较_正态近似}
 \end{align}
@@ -369,7 +370,7 @@ h(y_1) = \frac{e^{-(\lambda_1+\lambda_2)}(\lambda_1+\lambda_2)^{y_1}}{y_1!}
 
 我们已经通过正态近似证明，各颜色的成品需求服从相互独立的泊松分布时，通过取消成品库存，保留在制品库存，能够减少企业的总库存。接下来我们将讨论正态近似的适用性。
 
-图\ref{fig:正态近似的误差}展示了4个不同服务水平（$1-\alpha=0.75,0.9,0.95,0.99$）下，$\hat{\xi}-\xi$的值随参数$\lambda$的变化。
+图\ref{fig:正态近似的误差}展示了4个不同服务水平（$\eta=0.75,0.9,0.95,0.99$）下，$\hat{\xi}-\xi$的值随参数$\lambda$的变化。
 
 \begin{figure}[htb]
 \centering
@@ -396,7 +397,7 @@ h(y_1) = \frac{e^{-(\lambda_1+\lambda_2)}(\lambda_1+\lambda_2)^{y_1}}{y_1!}
 
 当服务水平进一步提高时，$|\hat{\xi_i}-\xi_i|$会继续增大，近似时产生的误差增大，就需要用其他的数值模拟手段来检验改进效果了。
 
-当服务水平降低时，近似的误差开始正向移动。到$1-\alpha=0.75$左右，已经出现大量$\hat{\xi_i} > \xi_i$的情况。此时已不能保证$\sum\xi_i \geq \sum\lceil\hat{\xi_i}\rceil$，上面的放缩方式就不再适用。值得注意的是，$|\hat{\xi_i}-\xi_i|$的值始终是很小的，误差保持在1以内。实际的生产过程是以整数件为单位的，在很多计算环节里都会用到取整，计算过程中增加或减少一件是很正常的事情。因此，1件以内的误差对整个系统的绩效影响不是很大。况且，在这么低的服务水平下，库存应该不是首要考虑目标。
+当服务水平降低时，近似的误差开始正向移动。到$\eta=0.75$左右，已经出现大量$\hat{\xi_i} > \xi_i$的情况。此时已不能保证$\sum\xi_i \geq \sum\lceil\hat{\xi_i}\rceil$，上面的放缩方式就不再适用。值得注意的是，$|\hat{\xi_i}-\xi_i|$的值始终是很小的，误差保持在1以内。实际的生产过程是以整数件为单位的，在很多计算环节里都会用到取整，计算过程中增加或减少一件是很正常的事情。因此，1件以内的误差对整个系统的绩效影响不是很大。况且，在这么低的服务水平下，库存应该不是首要考虑目标。
 
 总之，在一般企业的服务水平范围内，正态近似得出的结论基本是可以接受的。
 
