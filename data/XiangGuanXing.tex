@@ -2,13 +2,7 @@
 
 \chapter{需求相关性对改进效果的影响}
 
-本章将讨论成品需求之间的相关性对改进方案的效果的影响。本章中仍然不考虑提前期等其他因素的影响。
-
-\section{需求相关性的现实意义}
-
-此处待补充实际例子，证明同一型号不同颜色的配件需求之间可能存在相关性。
-
-车型的销售数据容易获得，但是各颜色的销售数据找不到。考虑用“高配/低配”或者其他存在后期分化的产品的相关性来代替。
+在之前的讨论中，我们总是假设成品的需求分布是相互独立的。事实上，现实中的两种相似成品的需求往往存在一些相关性。本章将讨论成品需求之间的相关性对改进方案的效果的影响。
 
 
 
@@ -105,23 +99,65 @@ w = \frac{x_2-\mu_2}{\sigma_2}
 \label{eq:相关系数结果}
 \end{align}
 
+至此，我们已构造出两个相关性为$\rho$的需求变量$D_1$和$D_2$，它们各自服从正态分布$N(\mu_1,\sigma_1^2)$和$N(\mu_2,\sigma_2^2)$，并且知道它们的联合分布服从二维正态分布$N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$。
 
-
-（证两个边缘分布都是正态，且相关系数为rho）
-
-
-
-设企业的服务水平为$\eta=1-\alpha$，对应的标准正态分布分位数为$z_\alpha$。则两种颜色的成品需要保留的库存$\xi_1$、$\xi_2$分别为
+设企业的服务水平为$\eta$，对应的标准正态分布分位数为$z_\eta$。则两种颜色的成品需要保留的库存$\xi_1$、$\xi_2$分别为
 \begin{align}
-\xi_1 = \mu_1 + z_\alpha\sigma_1 \label{eq:成品库存1_相关性}\\
-\xi_2 = \mu_2 + z_\alpha\sigma_2 \label{eq:成品库存2_相关性}
+\xi_1 = \mu_1 + z_\eta\sigma_1 \label{eq:成品库存1_相关性}\\
+\xi_2 = \mu_2 + z_\eta\sigma_2 \label{eq:成品库存2_相关性}
 \end{align}
 
-现在假设我们按照改进策略，取消两种颜色的成品库存，改为保留未喷涂的在制品库存。忽略供货提前期等变化的影响。企业的服务水平仍然为$\eta=1-\alpha$。为了满足该服务水平，所需的在制品库存为$\xi$。此时的在制品库存需要同时应对两种颜色的成品需求，因此，对未喷涂的在制品需求为$D=D_1+D_2$。
+现在假设我们按照改进策略，取消两种颜色的成品库存，改为保留未喷涂的在制品库存。忽略供货提前期等变化的影响。企业的服务水平仍然为$\eta$。为了满足该服务水平，所需的在制品库存为$\xi$。此时的在制品库存需要同时应对两种颜色的成品需求，因此，对未喷涂的在制品需求为$D=D_1+D_2$。设$D$、$D_2$的联合分布为$g(y_1,y_2)$。由$y_1=x_1+x_2,y_2=x_2$得$x_1=y_1-y_2,x_2=y_2$。因此，雅可比矩阵为
+\[
+J = \begin{bmatrix}
+\frac{\partial x_1}{\partial y_1} & \frac{\partial x_1}{\partial y_2} \\
+\frac{\partial x_2}{\partial y_1} & \frac{\partial x_2}{\partial y_2}
+\end{bmatrix} = \begin{bmatrix}
+1 & -1 \\
+0 & 1
+\end{bmatrix}
+\]
+由此可得$g(y_1,y_2)$的概率分布为
+\begin{align}
+g(y_1,y_2) &= f(x_1,x_2)\cdot\left|J\right| \notag\\
+&= f(y_1-y_2,y_2)\cdot
+\begin{vmatrix}
+1 & -1 \\
+0 & 1
+\end{vmatrix} \notag\\
+&= \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}e^{-\frac{1}{2(1-\rho^2)}\left[\frac{(y_1-y_2-\mu_1)^2}{\sigma_1^2}+\frac{(y_2-\mu_2)^2}{\sigma_2^2}-\frac{2\rho(y_1-y_2-\mu_1)(y_2-\mu_2)}{\sigma_1\sigma_2}\right]}
+\label{eq:新联合分布_二维正态}
+\end{align}
+$g(y_1,y_2)$的边缘分布$h(y_1)$即是在制品需求$D$的概率分布。对$y_2$积分可得
+\begin{equation}
+h(y_1) = \int_{-\infty}^{+\infty}\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}e^{-\frac{1}{2(1-\rho^2)}\left[\frac{(y_1-y_2-\mu_1)^2}{\sigma_1^2}+\frac{(y_2-\mu_2)^2}{\sigma_2^2}-\frac{2\rho(y_1-y_2-\mu_1)(y_2-\mu_2)}{\sigma_1\sigma_2}\right]}\dif y_2
+\label{eq:求边缘分布_二维正态}
+\end{equation}
+令
+\[
+A = \frac{1}{\sqrt{2\pi(\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2)}}e^{-\frac{[y_1-(\mu_1+\mu_2)]^2}{2(\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2)}}
+\]
+则公式\ref{eq:求边缘分布_二维正态}可变形为
+\begin{equation}
+h(y_1) = A\int_{-\infty}^{+\infty}\frac{\sqrt{2\pi(\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2)}}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}e^{-\frac{\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2}{2\sigma_1^2\sigma_2^2(1-\rho^2)}\left[y_2-\frac{(y_1-\mu_1)\sigma_2^2+\mu_2\sigma_1^2+\rho\sigma_1\sigma_2y_1}{\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2}\right]^2}\dif y_2
+\label{eq:求边缘分布2_二维正态}
+\end{equation}
+再令
+\[
+t = \sqrt{\frac{\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2}{\sigma_1^2\sigma_2^2(1-\rho^2)}}\left[y_2-\frac{(y_1-\mu_1)\sigma_2^2+\mu_2\sigma_1^2+\rho\sigma_1\sigma_2y_1}{\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2}\right]
+\]
+则公式\ref{eq:求边缘分布2_二维正态}可变形为
+\begin{equation}
+h(y_1) = A\int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}\dif t
+\label{eq:求边缘分布3_二维正态}
+\end{equation}
+公式\ref{eq:求边缘分布3_二维正态}的右半部分是标准正态分布的累积概率函数，总累积概率应该为1，因此得到$h(y_1)=A$，即
+\begin{equation}
+h(y_1) = \frac{1}{\sqrt{2\pi(\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2)}}e^{-\frac{[y_1-(\mu_1+\mu_2)]^2}{2(\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2)}}
+\label{eq:边缘分布结果_二维正态}
+\end{equation}
 
-（证二维正态分布下，边缘分布之和仍然服从正态分布。）
-
-由以上证明可知，在制品需求$D$服从正态分布$N(\mu,\sigma^2)$，且$\mu=\mu_1+\mu_2$，$\sigma^2=\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2$。因此，需要保留的在制品库存$\xi$为
+由以上推导可知，在制品需求$D$服从正态分布$N(\mu,\sigma^2)$，其中$\mu=\mu_1+\mu_2$，$\sigma^2=\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2$。因此，需要保留的在制品库存$\xi$为
 \begin{equation}
 \xi = \mu + z_\alpha\sigma = \mu_1 + \mu_2 + z_\alpha\sqrt{\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2}
 \label{eq:在制品库存_相关性}
@@ -190,6 +226,31 @@ $\rho_{ij}=-1$时，各种颜色的成品需求都是完全负相关的。一种
 $\rho_{ij}=1$时，各种颜色成品需求都是完全正相关的。一种颜色的成品需求增加，会导致其他颜色的需求同步增加。在制品库存$\xi$取得最大值，说明此事采取保留在制品库存的策略，收益最小。事实上，$\rho_{ij}=1$时，公式\ref{eq:改进前后库存对比i_相关性}中的等号是成立的，即$\sum_{i=1}^N\xi_i - \xi = 0$。换句话说，此时采取保留在制品库存的改进措施毫无效果。
 
 其他情况下，不论各成品的需求是正相关还是负相关，只要不是完全正相关（$\rho_{ij}=1$），都能从保留在制品库存的策略中获得收益。并且，与需求独立的情况相比，负相关时的收益更大，正相关时的收益更小。这是企业在做出改进决策之前需要考虑的重要因素。
+
+
+
+
+
+
+
+
+
+\section{需求相关性实例}
+
+本文是以汽车行业为课题背景的，
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

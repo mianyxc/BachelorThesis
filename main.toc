@@ -27,19 +27,18 @@
 \contentsline {subsection}{\numberline {5.4.1}第二类服务水平与改进失效}{31}{subsection.5.4.1}
 \contentsline {section}{\numberline {5.5}避免改进失效}{33}{section.5.5}
 \contentsline {chapter}{\numberline {第\nobreakspace {}6\nobreakspace {}章}需求相关性对改进效果的影响}{34}{chapter.6}
-\contentsline {section}{\numberline {6.1}需求相关性的现实意义}{34}{section.6.1}
-\contentsline {section}{\numberline {6.2}需求服从二维正态分布的情况}{34}{section.6.2}
-\contentsline {section}{\numberline {6.3}需求服从多维正态分布的情况}{37}{section.6.3}
-\contentsline {section}{\numberline {6.4}极端情况的讨论}{38}{section.6.4}
-\contentsline {chapter}{\numberline {第\nobreakspace {}7\nobreakspace {}章}Backorder对改进效果的影响}{40}{chapter.7}
-\contentsline {section}{\numberline {7.1}考虑Backorder成本的任意更新过程}{40}{section.7.1}
-\contentsline {section}{\numberline {7.2}考虑Backorder成本的泊松过程}{41}{section.7.2}
-\contentsline {section}{\numberline {7.3}服务水平约束的影响}{43}{section.7.3}
-\contentsline {chapter}{\numberline {第\nobreakspace {}8\nobreakspace {}章}提前期对改进效果的影响}{44}{chapter.8}
-\contentsline {section}{\numberline {8.1}需求正态分布的情况}{44}{section.8.1}
-\contentsline {section}{\numberline {8.2}需求泊松到达的情况}{44}{section.8.2}
-\contentsline {section}{\numberline {8.3}(s,S)库存策略下的情况}{44}{section.8.3}
-\contentsline {chapter}{插图索引}{45}{section*.28}
-\contentsline {chapter}{表格索引}{46}{section*.30}
-\contentsline {chapter}{公式索引}{47}{section*.32}
-\contentsline {chapter}{参考文献}{50}{section*.34}
+\contentsline {section}{\numberline {6.1}需求服从二维正态分布的情况}{34}{section.6.1}
+\contentsline {section}{\numberline {6.2}需求服从多维正态分布的情况}{38}{section.6.2}
+\contentsline {section}{\numberline {6.3}极端情况的讨论}{39}{section.6.3}
+\contentsline {chapter}{\numberline {第\nobreakspace {}7\nobreakspace {}章}Backorder对改进效果的影响}{41}{chapter.7}
+\contentsline {section}{\numberline {7.1}考虑Backorder成本的任意更新过程}{41}{section.7.1}
+\contentsline {section}{\numberline {7.2}考虑Backorder成本的泊松过程}{42}{section.7.2}
+\contentsline {section}{\numberline {7.3}服务水平约束的影响}{44}{section.7.3}
+\contentsline {chapter}{\numberline {第\nobreakspace {}8\nobreakspace {}章}提前期对改进效果的影响}{45}{chapter.8}
+\contentsline {section}{\numberline {8.1}需求正态分布的情况}{45}{section.8.1}
+\contentsline {section}{\numberline {8.2}需求泊松到达的情况}{45}{section.8.2}
+\contentsline {section}{\numberline {8.3}(s,S)库存策略下的情况}{45}{section.8.3}
+\contentsline {chapter}{插图索引}{46}{section*.28}
+\contentsline {chapter}{表格索引}{47}{section*.30}
+\contentsline {chapter}{公式索引}{48}{section*.32}
+\contentsline {chapter}{参考文献}{51}{section*.34}
