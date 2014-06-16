@@ -92,10 +92,34 @@ Conway R, Maxwell W, McClain J~O, et~al.
 \newblock Operations Research, 1988, 36(2):229–241
 \thudot
 
+\bibitem{__????}
+新浪汽车：东风日产销售数据.
+\newblock
+  {\url{http://data.auto.sina.com.cn/xlsjk/brand.php?start_date=2012-01&end_date=2014-4&bid=94}}
+\thudot
+
+\bibitem{__????-1}
+新浪汽车：上海通用别克销售数据.
+\newblock
+  {\url{http://data.auto.sina.com.cn/xlsjk/brand.php?start_date=2012-01&end_date=2014-4&bid=58}}
+\thudot
+
 \bibitem{wolff_stochastic_1989}
 Wolff R~W.
 \newblock Stochastic modeling and the theory of queues, volume~14.
 \newblock Prentice hall Englewood Cliffs, {NJ}, 1989
+\thudot
+
+\bibitem{buzacott_stochastic_1993}
+Buzacott J~A, Shanthikumar J~G.
+\newblock Stochastic models of manufacturing systems, volume~4.
+\newblock Prentice Hall Englewood Cliffs, {NJ}, 1993
+\thudot
+
+\bibitem{veatch_scheduling_1996}
+Veatch M~H, Wein L~M.
+\newblock Scheduling a Make-To-Stock Queue: Index Policies and Hedging Points.
+\newblock Operations Research, 1996, 44(4):634--647
 \thudot
 
 \end{thebibliography}
