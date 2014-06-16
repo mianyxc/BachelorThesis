@@ -5,51 +5,54 @@ A level-1 auxiliary file: data/YinYan.aux
 A level-1 auxiliary file: data/WenXianZongShu.aux
 A level-1 auxiliary file: data/YanJiuSiLu.aux
 A level-1 auxiliary file: data/YouHuaQianLi.aux
+A level-1 auxiliary file: data/GaiJinShiXiao.aux
 A level-1 auxiliary file: data/XiangGuanXing.aux
+A level-1 auxiliary file: data/Backorder.aux
 A level-1 auxiliary file: data/TiQianQi.aux
 The style file: thubib.bst
 Database file #1: ref/refs.bib
 Warning--there's a publisher but no address in fetter_decision_1961
 Warning--there's a publisher but no address in gershwin_manufacturing_1994
-You've used 14 entries,
+Warning--there's a publisher but no address in wolff_stochastic_1989
+You've used 15 entries,
             2219 wiz_defined-function locations,
-            646 strings with 7434 characters,
-and the built_in function-call counts, 6315 in all, are:
-= -- 612
-> -- 138
-< -- 1
-+ -- 64
-- -- 32
-* -- 523
-:= -- 847
-add.period$ -- 29
-call.type$ -- 14
+            654 strings with 7591 characters,
+and the built_in function-call counts, 6531 in all, are:
+= -- 630
+> -- 142
+< -- 2
++ -- 66
+- -- 33
+* -- 535
+:= -- 877
+add.period$ -- 31
+call.type$ -- 15
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 441
-empty$ -- 689
-format.name$ -- 42
-if$ -- 1427
+cite$ -- 18
+duplicate$ -- 456
+empty$ -- 717
+format.name$ -- 43
+if$ -- 1478
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 16
-newline$ -- 87
-num.names$ -- 14
-pop$ -- 58
+int.to.str$ -- 15
+missing$ -- 18
+newline$ -- 93
+num.names$ -- 15
+pop$ -- 62
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 87
+skip$ -- 89
 stack$ -- 0
-substring$ -- 900
-swap$ -- 17
-text.length$ -- 1
+substring$ -- 914
+swap$ -- 18
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 59
-width$ -- 16
-write$ -- 168
-(There were 2 warnings)
+warning$ -- 3
+while$ -- 61
+width$ -- 17
+write$ -- 180
+(There were 3 warnings)

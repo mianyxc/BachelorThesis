@@ -87,9 +87,15 @@ Tabe T, Muramatsu R, Tanaka Y.
 \thudot
 
 \bibitem{conway_role_1988}
-Conway R, Maxwell W, {McClain} J~O, et~al.
+Conway R, Maxwell W, McClain J~O, et~al.
 \newblock The role of work-in-process inventory in serial production lines.
 \newblock Operations Research, 1988, 36(2):229–241
+\thudot
+
+\bibitem{wolff_stochastic_1989}
+Wolff R~W.
+\newblock Stochastic modeling and the theory of queues, volume~14.
+\newblock Prentice hall Englewood Cliffs, {NJ}, 1989
 \thudot
 
 \end{thebibliography}

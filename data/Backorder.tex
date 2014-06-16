@@ -2,7 +2,7 @@
 
 \chapter{Backorder对改进效果的影响}
 
-作为供应商，如果不能按时交货，有时需要将订单记下，尽快补货，并且承受一定的惩罚。这种订单称为backorder。本章中，我们将讨论backorder对我们的方案改进效果的影响。
+在之前的讨论中，我们始终默认每一期的需求对后一期没有影响，也就是说未满足的订单将会被直接舍弃。实际上，作为供应商，如果不能按时交货，有时需要将订单记下，尽快补货，并且承受一定的惩罚。这种订单称为backorder。本章中，我们将讨论backorder对改进效果的影响。与前文不同的是，由于引入惩罚成本，本章中评价改进效果的指标不再是服务水平，而是考虑降低总成本。
 
 
 
@@ -11,50 +11,113 @@
 
 以汽车保险杠的生产线为例，为了使讨论简化，我们假设注塑环节需要的时间远大于喷涂环节，从而忽略喷涂环节的生产时间。也就是说，改进前后相比，单件产品的生产时间是不变的。
 
-假设有N种颜色的成品，每种产品的需求都是独立到来的。每当需求到来时，如果该产品有库存，则立即满足该需求，且注塑机产生一个生产订单；如果没有库存，则产生一个backorder，并且在注塑机处产生一个生产订单。所有的生产订单采用先到先服务的策略。
-
-定义：
+假设有N种颜色的成品，每种产品的需求都是独立到来的。每当需求到来时，如果该产品有库存，则立即满足该需求，且注塑机产生一个生产订单；如果没有库存，则产生一个backorder，并且在注塑机处产生一个生产订单。所有的生产订单采用先到先服务的策略。定义变量如下：
 
 $s_i$：每种颜色初始库存
 
-$h$：库存成本率
+$h$：库存成本率（成品与在制品相同）
 
-$b$：backorder成本率
+$b$：backorder成本率（成品与在制品相同）
 
 $D_i(t)$：直到$t$时刻，$i$产品的总需求
 
-$C_i(t)$：直到$t$时刻，$i$产品的总产量
+$M_i(t)$：直到$t$时刻，$i$产品的总产量
 
-$I_i(t)$：$t$时刻的库存，$I_i(t)=s_i+C_i(t)-\min\{s_i+C_i(t),D_i(t)\}$
+$I_i(t)$：$t$时刻的$i$产品库存，$I_i(t)=s_i+M_i(t)-\min\{s_i+M_i(t),D_i(t)\}$
 
-$B_i(t)$：$t$时刻的backorder，$B_i(t)=D_i(t)-\min\{s_i+C_i(t),D_i(t)\}$
+$B_i(t)$：$t$时刻的$i$产品backorder，$B_i(t)=D_i(t)-\min\{s_i+M_i(t),D_i(t)\}$
 
-$\phi_{i,N}(t)$：$t$时刻$i$产品的成本率，$\phi_{i,N}=hI_i(t)+bB_i(t)$
+$\phi_{i,N}(t)$：$t$时刻$i$产品的成本率，$\phi_{i,N}(t)=hI_i(t)+bB_i(t)$
 
 $\phi_N(t)$：$t$时刻所有产品的成本率，$\phi_N(t)=\sum_{i=1}^N\phi_{i,N}(t)$
 
 $\Phi_N(t)$：从初始时刻到$t$时刻的总成本，$\Phi_N(t)=\int_0^t\phi_N(u)\dif u$
 
-以上所有变量去掉角标，即对应改进后的变量。
+$s$：改进后的在制品初始库存
 
-很容易得出以下结论：
+$D(t)$：直到$t$时刻，改进后的在制品总需求
+
+$M(t)$：直到$t$时刻，改进后的在制品总产量
+
+$I(t)$：$t$时刻的在制品库存，$I(t)=s+M(t)-\min\{s+M(t),D(t)\}$
+
+$B(t)$：$t$时刻的在制品backorder，$B(t)=D(t)-\min\{s+M(t),D(t)\}$
+
+$\phi(t)$：$t$时刻在制品的成本率，$\phi(t)=hI(t)+bB(t)$
+
+$\Phi(t)$：改进后，从初始时刻到$t$时刻的总成本，$\Phi(t)=\int_0^t\phi(u)\dif u$
+
+接下来我们将证明，如果单纯把几种成品的库存合并为在制品库存，而不改变初始的库存总量，则改进后的总成本是低于改进前的总成本的。首先分析改进前后各变量之间的关系，显然有
+\begin{equation}
+s = \sum_{i=1}^N s_i,\qquad D(t) = \sum_{i=1}^N D_i(t),\qquad M(t) = \sum_{i=1}^N M_i(t)
+\label{eq:改进前后的基本关系_backorder}
+\end{equation}
+根据以上关系可以推导出$\min\{s+M(t),D(t)\}\geq\sum_{i=1}^N\min\{s_i+M_i(t),D_i(t)\}$，过程如下：
 \begin{align}
-\phi(t) \leq \phi_N(t),& \qquad \forall t\geq 0 \\
-\Phi(t) \leq \Phi_N(t),& \qquad \forall t\geq 0
+\min\{s+M(t),D(t)\} &= \min\left\{\sum_{i=1}^N s_i+\sum_{i=1}^N M_i(t),\sum_{i=1}^N D_i(t)\right\} \notag \\
+&= \min\left\{\sum_{i=1}^N [s_i+M_i(t)],\sum_{i=1}^N D_i(t)\right\} \notag \\
+&\geq \min\left\{\sum_{i=1}^N\min\{s_i+M_i(t),D_i(t)\},\sum_{i=1}^N\min\{s_i+M_i(t),D_i(t)\}\right\} \notag \\
+&= \sum_{i=1}^N\min\{s_i+M_i(t),D_i(t)\}
+\label{eq:局部放缩_backorder}
 \end{align}
-
-设$Q_i(t)=D_i(t)-C_i(t)$，且所有的到达都是独立同分布的更新过程，到达速率严格小于生产速率。根据Wolff(1989)，$Q_i(t)$是存在极限分布的。设此极限分布为$Q_i$。那么极限情况下的总成本率为
+将不等式\ref{eq:局部放缩_backorder}代入$I(t)$的定义中，就能比较改进前后同一时刻的库存大小：
+\begin{align}
+I(t) &= s+M(t)-\min\{s+M(t),D(t)\} \notag \\
+&\leq \sum_{i=1}^N s_i + \sum_{i=1}^N M_i(t) - \sum_{i=1}^N\min\{s_i+M_i(t),D_i(t)\} \notag \\
+&= \sum_{i=1}^N [s_i+M_i(t)-\min\{s_i+M_i(t),D_i(t)\}] \notag \\
+&= \sum_{i=1}^N I_i(t)
+\label{eq:改进前后同一时刻库存比较_backorder}
+\end{align}
+同理可比较改进前后同一时刻backorder的大小：
+\begin{align}
+B(t) &= D(t)-\min\{s+M(t),D(t)\} \notag \\
+&\leq \sum_{i=1}^N D_i(t) - \sum_{i=1}^N\min\{s_i+M_i(t),D_i(t)\} \notag \\
+&= \sum_{i=1}^N [D_i(t)-\min\{s_i+M_i(t),D_i(t)\}] \notag \\
+&= \sum_{i=1}^N B_i(t)
+\label{eq:改进前后同一时刻backorder比较_backorder}
+\end{align}
+再将不等式\ref{eq:改进前后同一时刻库存比较_backorder}和\ref{eq:改进前后同一时刻backorder比较_backorder}代入$\phi(t)$的定义中，得到
 \begin{equation}
-\psi_N((s_1,s_2,\ldots,s_N)) = \sum_{i=1}^NbE(Q_i) + hs_i - (h+b)E(\min\{s_i,Q_i\})
-\label{eq:极限总成本率}
+\phi(t) = hI(t)+bB(t) \leq h\sum_{i=1}^N I_i(t) + b\sum_{i=1}^N B_i(t) = \phi_N(t)
+\label{eq:改进前后成本率比较_backorder}
 \end{equation}
-
-公式\ref{eq:极限总成本率}是初始库存$(s_1,s_2,\ldots,s_N)$的函数，因此存在一组$(s_1^*1,s_2^*,\ldots,s_N^*)$使$\psi_N((s_1,s_2,\ldots,s_N))$取得最优值。
-
-同理，对于改进后的系统，极限状态下的成本率为$\psi(s)$，使其取得最优值的$s$记为$s^*$。从而有
+公式\ref{eq:改进前后成本率比较_backorder}说明，改进后每时每刻的成本率都低于改进前同一时刻的成本率，自然地，改进后的总成本就低于改进前的总成本，即
 \begin{equation}
-\psi(s^*) \leq \psi(\sum_{i=1}^Ns_i^*) \leq \psi_N((s_1^*1,s_2^*,\ldots,s_N^*))
+\Phi(t)=\int_0^t\phi(u)\dif u \leq \int_0^t\phi_N(u)\dif u = \Phi_N(t)
+\label{eq:改进前后成本比较_backorder}
 \end{equation}
+至此，已经证明了：如果单纯把几种成品的库存合并为在制品库存，而不改变初始的库存总量，则改进后的总成本低于改进前的总成本。
+
+在这个系统中，需要企业决定的参数是初始库存。当需求分布和生产速率确定时，企业会选择一个最优的初始库存，使得成本最小。此处的成本是指长期运行的成本，所以这个最优的初始库存是由需求和生产在极限状态下的稳定分布决定的。Wolff（1989）\cite{wolff_stochastic_1989}证明：设$Q_i(t)=D_i(t)-M_i(t)$，且所有的到达都是独立同分布的更新过程，到达速率严格小于生产速率，则$Q_i(t)$是存在极限分布的。设此极限分布为$Q_i$。那么极限状态下的总成本率为
+\begin{equation}
+\psi_N(s_1,s_2,\ldots,s_N) = \sum_{i=1}^N\Big\{b[E(Q_i)-E(\min\{s_i,Q_i\})] + h[s_i - E(\min\{s_i,Q_i\})]\Big\}
+\label{eq:极限总成本率_backorder}
+\end{equation}
+公式\ref{eq:极限总成本率_backorder}是初始库存$(s_1,s_2,\ldots,s_N)$的函数。对于每一个$b[E(Q_i)-E(\min\{s_i,Q_i\})] + h[s_i - E(\min\{s_i,Q_i\})]$，存在一个$s_i$使它取得最小值，我们将这个最优的$s_i$记为$s_i^*$。显然，使得总成本率$\psi_N(s_1,s_2,\ldots,s_N)$最小的一组$(s_1,s_2,\ldots,s_N)$是$(s_1^*1,s_2^*,\ldots,s_N^*)$。
+
+同理，对于改进后的系统，设$Q(t)=D(t)-M(t)$，$Q(t)$的极限分布为$Q$。则改进后的极限状态下的成本率为
+\begin{equation}
+\psi(s) = b[E(Q)-E(\min\{s,Q\})] + h[s - E(\min\{s,Q\})]
+\label{eq:改进后极限总成本率_backorder}
+\end{equation}
+同样存在一个$s$使$\psi(s)$取得最小值，将这个最优的$s$记为$s^*$。
+
+显然，一般情况下，$s^*$和$\sum_{i=1}^Ns_i^*$是不相等的。也就是说，如果企业在改进前后都按照最优的库存策略来制定初始库存，那么改进前后的总库存不一定相等。这种情况下，改进后的总成本是否仍然低于改进前的总成本呢？利用之前的结论，我们仍然能够得到肯定的回答。
+
+将我们要证明的结论转化为数学公式，目标就是证明$\psi(s^*)\leq\psi_N(s_1^*,s_2^*,\ldots,s_N^*)$。首先利用公式\ref{eq:改进前后成本比较_backorder}可以得到
+\begin{equation}
+\psi(\sum_{i=1}^Ns_i^*) \leq \psi_N(s_1^*,s_2^*,\ldots,s_N^*)
+\label{eq:不等式右端_backorder}
+\end{equation}
+然后利用$s^*$的定义，由于$s^*$是使$\psi(s)$取得最小值的初始库存，所以$\psi(s^*)$小于等于任何$\psi(s)$值，其中包括$\psi(\sum_{i=1}^Ns_i^*)$。
+\begin{equation}
+\psi(s^*) \leq \psi(\sum_{i=1}^Ns_i^*)
+\label{eq:不等式右端_backorder}
+\end{equation}
+由不等式\ref{eq:不等式右端_backorder}和\ref{eq:不等式右端_backorder}可得
+\[
+\psi(s^*) \leq \psi_N(s_1^*,s_2^*,\ldots,s_N^*)
+\]
 因此，即使在分别采取最优初始库存的情况下，改进后的成本率仍然比改进前要低。
 
 
