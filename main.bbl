@@ -92,6 +92,143 @@ Conway R, Maxwell W, McClain J~O, et~al.
 \newblock Operations Research, 1988, 36(2):229–241
 \thudot
 
+\bibitem{daskin_inventory-location_2002}
+Daskin M~S, Coullard C~R, Shen Z~J~M.
+\newblock An inventory-location model: Formulation, solution algorithm and
+  computational results.
+\newblock Annals of Operations Research, 2002, 110(1-4):83–106
+\thudot
+
+\bibitem{snyder_stochastic_2007}
+Snyder L~V, Daskin M~S, Teo C~P.
+\newblock The stochastic location model with risk pooling.
+\newblock European Journal of Operational Research, 2007, 179(3):1221--1238
+\thudot
+
+\bibitem{ozsen_capacitated_2008}
+Ozsen L, Coullard C~R, Daskin M~S.
+\newblock Capacitated warehouse location model with risk pooling.
+\newblock Naval Research Logistics ({NRL)}, 2008, 55(4):295--312
+\thudot
+
+\bibitem{shen_joint_2003}
+Shen Z~J~M, Coullard C, Daskin M~S.
+\newblock A joint location-inventory model.
+\newblock Transportation Science, 2003, 37(1):40–55
+\thudot
+
+\bibitem{eppen_centralized_1981}
+Eppen G, Schrage L.
+\newblock Centralized ordering policies in a multi-warehouse system with lead
+  times and random demand.
+\newblock Multi-level production/inventory control systems: Theory and
+  practice, 1981, 16:51–67
+\thudot
+
+\bibitem{jonsson_analysis_1987}
+Jönsson H, Silver E~A.
+\newblock Analysis of a Two-Echelon Inventory Control System with Complete
+  Redistribution.
+\newblock Management Science, 1987, 33(2):215--227
+\thudot
+
+\bibitem{jackson_stock_1988}
+Jackson P~L.
+\newblock Stock Allocation in a Two-Echelon Distribution System or "what to Do
+  Until Your Ship Comes In".
+\newblock Management Science, 1988, 34(7):880--895
+\thudot
+
+\bibitem{schwarz_model_1989}
+Schwarz L~B.
+\newblock A Model for Assessing the Value of Warehouse Risk-Pooling:
+  Risk-Pooling Over Outside-Supplier Leadtimes.
+\newblock Management Science, 1989, 35(7):828--842
+\thudot
+
+\bibitem{clark_optimal_2004}
+Clark A~J, Scarf H.
+\newblock Optimal Policies for a Multi-Echelon Inventory Problem.
+\newblock Management Science, 2004, 50(12\_supplement):1782--1790
+\thudot
+
+\bibitem{benjaafar_benefits_2005}
+Benjaafar S, Cooper W~L, Kim J~S.
+\newblock On the Benefits of Pooling in Production-Inventory Systems.
+\newblock Management Science, 2005, 51(4):548--565
+\thudot
+
+\bibitem{yang_conditions_2009}
+Yang H, Schrage L.
+\newblock Conditions that cause risk pooling to increase inventory.
+\newblock European Journal of Operational Research, 2009, 192(3):837--851
+\thudot
+
+\bibitem{zinn_planning_1988}
+Zinn W, Bowersox D~J.
+\newblock Planning physical distribution with the principle of postponement.
+\newblock {PLANNING}, 1988, 9(2):111
+\thudot
+
+\bibitem{lee_modelling_1997}
+Lee H~L, Tang C~S.
+\newblock Modelling the Costs and Benefits of Delayed Product Differentiation.
+\newblock Management Science, 1997, 43(1):40–53
+\thudot
+
+\bibitem{su_evaluation_2005}
+Su J~C~P, Chang Y~L, Ferguson M.
+\newblock Evaluation of postponement structures to accommodate mass
+  customization.
+\newblock Journal of Operations Management, 2005, 23(3–4):305--318
+\thudot
+
+\bibitem{cheng_simulation_2010}
+Cheng T~E, Li J, Wan C~J, et~al.
+\newblock Simulation of a Two-End-Product Postponement System.
+\newblock Proceedings of Postponement Strategies in Supply Chain Management.
+  Springer, 2010: 109–123
+\thudot
+
+\bibitem{zeng_research_????}
+Zeng D, An W, Luo X.
+\newblock Research on Hybrid Postponement Strategies of Supply Chain.
+\newblock Proceedings of Logistics. American Society of Civil Engineers, :
+  3262--3269
+\thudot
+
+\bibitem{krishnamoorthy_s_2004}
+Krishnamoorthy A, Islam M~E.
+\newblock (s, S) inventory system with postponed demands.
+\newblock Stochastic analysis and applications, 2004, 22(3):827–842
+\thudot
+
+\bibitem{jayaraman_perishable_2012}
+Jayaraman R, Sivakumar B, Arivarignan G.
+\newblock A perishable inventory system with postponed demands and multiple
+  server vacations.
+\newblock Modelling and Simulation in Engineering, 2012, 2012:8
+\thudot
+
+\bibitem{feller_introduction_2008}
+Feller W.
+\newblock An introduction to probability theory and its applications, volume~2.
+\newblock John Wiley \& Sons, 2008
+\thudot
+
+\bibitem{newman_power_2005}
+Newman M.
+\newblock Power laws, Pareto distributions and Zip's law.
+\newblock Contemporary Physics, 2005, 46(5):323--351
+\thudot
+
+\bibitem{agrawal_estimating_1996}
+Agrawal N, Smith S~A.
+\newblock Estimating negative binomial demand for retail inventory management
+  with unobservable lost sales.
+\newblock Naval Research Logistics ({NRL)}, 1996, 43(6):839--861
+\thudot
+
 \bibitem{__????}
 新浪汽车：东风日产销售数据.
 \newblock
