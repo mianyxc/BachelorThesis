@@ -772,9 +772,6 @@
     \ifthu@doctor
       \cleardoublepage\thu@doctor@engcover
     \fi
-    \ifthu@postdoctor\relax\else%
-      \ifthu@bachelor\clearpage\else\cleardoublepage\fi%
-      \thu@authorization@mk\fi
   \end{titlepage}
   \normalsize
   \thu@makeabstract
@@ -818,12 +815,7 @@
     \thu@chapter*{\thu@ackname}
   }
   {
-    \ifthu@postdoctor\relax\else%
-     \thu@chapter*{\thu@declarename}
-     \par{\xiaosi\parindent2em\thu@declaretext}\vskip2cm
-       {\xiaosi\hfill\thu@signature\thu@underline[2.5cm]\relax%
-        \thu@backdate\thu@underline[2.5cm]\relax}%
-    \fi
+
   }
 \def\thu@starttoc#1{% #1: float type, prepend type name in \listof*** entry.
   \let\oldnumberline\numberline
